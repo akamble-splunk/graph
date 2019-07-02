@@ -141,7 +141,7 @@ func TestRetries(t *testing.T) {
 
 	resources := []Resource{kinesisResource, deploymentResource}
 
-	lib := New(&Opts{CustomLogger: t.Log, MaxRetries: 2,})
+	lib := New(&Opts{CustomLogger: t.Log,})
 
 	_, err := lib.Sync(ctxt, resources, false)
 
@@ -163,7 +163,7 @@ func TestRetriesFail(t *testing.T) {
 
 	resources := []Resource{kinesisResource, deploymentResource}
 
-	lib := New(&Opts{CustomLogger: t.Log, MaxRetries: 1,})
+	lib := New(&Opts{CustomLogger: t.Log})
 
 	_, err := lib.Sync(ctxt, resources, false)
 

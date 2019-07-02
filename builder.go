@@ -190,12 +190,7 @@ func (lib *Lib) createSync(ctxt context.Context, resources []Resource, g *graph)
 
 	resourcesLeft := len(ordered)
 
-	if lib.maxRetryAttempts == 0{
-		maxAttempts = len(ordered)
-	} else {
-		maxAttempts = lib.maxRetryAttempts
-	}
-
+	maxAttempts = len(ordered)
 
 	buildCache := map[string]Resource{}
 	status := map[string]string{}
